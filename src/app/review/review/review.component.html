@@ -1,0 +1,23 @@
+<div class="container">
+    <div *ngFor="let q of questions" class="ques-opt-container"> 
+        <div class="ques">
+            <h3>Ques. {{q?.question}}</h3>
+        </div>
+        <div class="options">
+            <ul>
+                <li *ngFor="let a of q?.answers;let k=index;">
+                    <input type="radio"  id="{{k}}" [checked]="k+1==q.ans" disabled>
+                    <label for="{{k}}"> {{a}}</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-secondary" (click)="goBack()">
+            retry
+          </button>
+        <button class="btn btn-success" (click)="sendResults()">
+          See Results
+        </button>
+    </div>
+</div>

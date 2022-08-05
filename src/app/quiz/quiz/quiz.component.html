@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="ques-opt-container"> 
+        <div class="ques">
+            <h3>Ques.{{currIndex+1}} {{currQues?.question}}</h3>
+        </div>
+        <div class="options">
+            <ul *ngFor="let ans of currQues?.answers;let i=index">
+                <li>
+                    <input type="radio" name="answer" id="{{i}}" (change)="add($event,currQues?.ansId,i+1)">
+                    <label for="{{i}}"> {{ ans}}</label>
+                </li>
+            </ul>
+        </div>
+        <div class="btns">
+            
+            <button *ngIf="currIndex>0" (click)="showPrev()" class="btn btn-primary">Prev</button> 
+            <button *ngIf="currIndex<questions?.length-1" (click)="showNext()" class="btn btn-success">Next</button>
+            <button *ngIf="currIndex==questions?.length-1" (click)="Review()" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+    
+</div>
