@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/online-test-app",
+    "rewrites":[
+     { "source":"**",
+       "destination":"/index.html"
+    }
+    ]
+  }
+}
